@@ -41,6 +41,7 @@ TBD
 
 - All work shall occur in a git worktree, never directly in the main checkout.
 - Create a worktree per branch (e.g., `git worktree add ../lamps-<branch> <branch>`); main stays clean.
+- After cloning, enable the repo's hooks: `git config core.hooksPath .githooks`. The pre-commit hook asserts `CLAUDE.md` and `AGENTS.md` remain identical.
 
 ### Commit & PRs
 

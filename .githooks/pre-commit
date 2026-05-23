@@ -1,0 +1,20 @@
+#!/bin/sh
+# Enforce that CLAUDE.md and AGENTS.md remain byte-for-byte identical.
+# Setup (once per clone): git config core.hooksPath .githooks
+
+set -e
+
+repo_root=$(git rev-parse --show-toplevel)
+clauded="$repo_root/CLAUDE.md"
+agents="$repo_root/AGENTS.md"
+
+if [ ! -f "$clauded" ] || [ ! -f "$agents" ]; then
+  echo "pre-commit: CLAUDE.md and AGENTS.md must both exist." >&2
+  exit 1
+fi
+
+if ! diff -q "$clauded" "$agents" >/dev/null; then
+  echo "pre-commit: CLAUDE.md and AGENTS.md are out of sync." >&2
+  echo "Fix with:  cp CLAUDE.md AGENTS.md   # or the reverse" >&2
+  exit 1
+fi
