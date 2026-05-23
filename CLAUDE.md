@@ -14,8 +14,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Guidelines
 
-See [AGENTS.md](AGENTS.md) for full guidelines. Key points:
-
 ### Project Structure
 
 Documentation lives under `docs/`:
