@@ -47,6 +47,7 @@ TBD
 ### Commit & PRs
 
 - Conventional commits: `<type>: <summary>` (e.g., `feat: add API client`)
+- Prefer atomic commits: one logical change per commit, independently revertable. Split unrelated changes; don't bundle a refactor with a feature.
 - PR body: what changed, why, test evidence, linked issues
 
 ## Skill routing
